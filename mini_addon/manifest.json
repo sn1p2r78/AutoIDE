@@ -1,0 +1,20 @@
+{
+  "manifest_version": "3",
+  "name": "AutoIDE Mini",
+  "version": "0.1.0",
+  "description": "Mini automation extension for web action logging",
+  "permissions": ["activeTab", "webReauest", "webvetrequests"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "popup": "popup.html",
+  "content_scripts": ["content.js"],
+  "actions": ["click"],
+  "browser_actions": [
+    {
+      "match_cases": ["!https://*.example.com/*"],
+      "event_pages": ["REGISTER", "PROXY"],
+      "js": ["background.js"]
+    }
+  ]
+}
